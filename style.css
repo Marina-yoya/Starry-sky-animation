@@ -5,12 +5,12 @@ body {
 }
 
 .scene {
-position: relative;
-/* width:100vh; */
-height: 30vh;
-background: linear-gradient(#111425,#3751e0);
-background-attachment: fixed;
-overflow: hidden;
+
+    position: relative;
+    height: 30vh;
+    background: linear-gradient(#111425, #3751e0);
+    background-attachment: fixed;
+    overflow: hidden;
 }
 
 .moon {
@@ -24,7 +24,7 @@ overflow: hidden;
     z-index: 1000;
 }
 
-.moon::after{
+.moon::after {
     content: "";
     position: absolute;
     top: -15px;
@@ -32,7 +32,7 @@ overflow: hidden;
     width: 100px;
     height: 100%;
     border-radius: 50%;
-    background: linear-gradient(#111425,#3751e0);
+    background: linear-gradient(#111425, #3751e0);
     background-attachment: fixed;
 }
 
@@ -51,7 +51,8 @@ overflow: hidden;
         transform: translateY(0);
     }
 
-    10%, 90% {
+    10%,
+    90% {
         opacity: 1;
     }
 
@@ -64,3 +65,53 @@ overflow: hidden;
 }
 
 
+.navigation {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    right: 20px;
+    list-style: none;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+}
+
+.navigation li {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border: 2px solid #9c9c9c;
+    border-radius: 50%;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.navigation li:hover,
+.navigation li.selected {
+    transform: scale(1.3);
+}
+
+section {
+    position: relative;
+    background: linear-gradient(#6981eb, #4259dd);
+}
+
+section:first-child {
+    height: 70vh;
+
+}
+
+section:not(:first-child) {
+    height: 100vh;
+
+}
+
+
+section>div {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
